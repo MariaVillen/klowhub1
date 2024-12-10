@@ -1,89 +1,36 @@
-# h3-06-klowhub
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Monorepo con Next.js, NestJS y Shared
+## Getting Started
 
-Este es un monorepo que contiene tres proyectos principales:
+First, run the development server:
 
-- **app**: Una aplicación Next.js con TypeScript.
-- **api**: Una API construida con NestJS y TypeScript.
-- **shared**: Una carpeta para tipos y utilidades compartidas entre `app` y `api`.
-
-## Requisitos previos
-
-- Tener **Node.js** (v14 o superior) instalado.
-- Tener **pnpm** instalado (globalmente o como dependencia de desarrollo).
-
-Puedes instalar `pnpm` globalmente ejecutando:
-
-`npm install -g pnpm `
-
-## Estructura del monorepo
-
-```/monorepo
-  /packages
-    /app        # Aplicación Next.js
-    /api        # API NestJS
-    /shared     # Tipos y utilidades compartidas
-  /node_modules
-  package.json  # Dependencias y scripts del proyecto
-  pnpm-workspace.yaml  # Configuración de pnpm para el monorepo
-  tsconfig.json  # Configuración general de TypeScript
-  README.md      # Este archivo
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Instalacion
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### 1 - Clonar el repositorio
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Primero, clona el repositorio en tu máquina local:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```
-git clone https://github.com/No-Country-simulation/h3-06-klowhub.git
-cd h3-06-klowhub
-```
+## Learn More
 
-### 2 - Instalar las dependencias
+To learn more about Next.js, take a look at the following resources:
 
-Desde la raíz del proyecto, puedes instalar todas las dependencias del monorepo utilizando pnpm:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-`pnpm install`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Instalar dependencias en el frontend: `pnpm --filter app add [dependencias]`
-- Instalar dependencias en el backend: ` pnpm --filter api add [dependencias]`
-- Instalar dependencias compartidas en el root: ` pnpm add -w [dependencias]`
+## Deploy on Vercel
 
-### 3 - Ejecutar los proyectos
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Para trabajar con los proyectos, puedes ejecutar las siguientes tareas desde la raíz del monorepo:
-
-- Correr entorno desarrollo frontend: desde el directorio raiz -> `pnpm run front:dev`
-- Correr entorno desarroll backend: desde el directorio raiz -> ` pnpm run back:dev`
-- Correr el proyecto entero (front y back): desde directorio raiz --> `pnpm run dev`
-
-La front corre en localhost:4000
-El back corre en localhost:3000
-
-### 4 - Trabajar con shared
-
-El proyecto shared contiene utilidades y tipos que son comunes tanto para la aplicación app como para la API api. Puedes importar desde shared de la siguiente manera en ambos proyectos.
-
-Ejemplo: ``` import { SomeShareUtility } from '@shared/utils';
-
-## Scripts Utiles
-
-Instalar todas las dependencias: `pnpm install`
-Limpiar monorepo: `pnpm prune`
-
-## pnpm Workspaces
-
-Este monorepo está configurado para usar pnpm workspaces, lo que permite gestionar dependencias de manera eficiente entre los distintos paquetes (app, api, shared). Las dependencias comunes solo se instalan una vez en la raíz del monorepo, lo que ayuda a optimizar el espacio en disco y la velocidad de instalación.
-
-Cuando ejecutas comandos en los proyectos específicos (pnpm --filter), pnpm se asegura de que solo las dependencias necesarias se instalen o ejecuten para ese proyecto.
-
-## Configuración de TypeScript
-
-Este monorepo está configurado con un archivo tsconfig.json en la raíz para que los proyectos app y api hereden la configuración común. Además, la carpeta shared contiene tipos y utilidades que pueden ser utilizados por ambos proyectos.
-
-## Prettier
-
-No elimine los archivos de prettier de los directorios app y api por si al final se decide que cada uno utilice su propio prettierrc.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

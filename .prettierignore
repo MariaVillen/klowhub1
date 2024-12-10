@@ -1,4 +1,11 @@
 
+# Ignorar los archivos generados por Next.js
+.next/
+out/
+
+
+# Ignorar directorios o archivos específicos de la aplicación
+public/
 
 # Ignorar archivos y directorios comunes
 node_modules/
@@ -18,23 +25,4 @@ tsconfig.base.json
 # Ignorar otros directorios que no deben ser formateados
 dist/
 
-# nest
-# Ignorar archivos de entorno y configuración
-.env
-.env.*
 
-# Ignorar otros directorios que no deben ser formateados
-coverage/
-
-# Ignorar archivos generados por herramientas de testing como Jest
-*.snap
-
-
-# next
-# Ignorar los archivos generados por Next.js
-.next/
-out/
-
-
-# Ignorar directorios o archivos específicos de la aplicación
-public/
