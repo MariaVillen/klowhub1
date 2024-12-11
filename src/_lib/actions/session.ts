@@ -4,6 +4,8 @@ import { jwtVerify, SignJWT } from 'jose';
 import { SESSION_SECRET_KEY } from '../config/constants';
 //import { redirect } from '@/i18n/routing';
 // import { getLocale, getTranslations } from 'next-intl/server';
+import { redirect } from '@/i18n/routing';
+import { getLocale } from 'next-intl/server';
 import { cookies } from 'next/headers';
 
 const encodedKey = new TextEncoder().encode(SESSION_SECRET_KEY!);
@@ -39,8 +41,8 @@ export async function getSession() {
   } catch (error) {
     // const t = await getTranslations('UserServerResponses');
     console.error('sessionVerifyError', error);
-    // const locale = await getLocale();
-    // redirect({ href: '/auth/signin', locale });
+    const locale = await getLocale();
+    redirect({ href: '/auth/signin', locale });
   }
 }
 

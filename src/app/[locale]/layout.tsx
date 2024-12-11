@@ -3,7 +3,6 @@ import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
 import '../globals.css';
 
 // const inter = localFont({
@@ -35,7 +34,8 @@ export default async function LocaleLayout({
   // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as never)) {
     console.log('not locale');
-    notFound();
+    <p>not locale</p>;
+    // notFound();
   }
 
   // Providing all messages to the client
